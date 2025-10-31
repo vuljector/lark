@@ -429,6 +429,8 @@ class LexerState:
 
             if not (text.start <= line_ctr.char_pos <= text.end):
                 raise ValueError("LineCounter.char_pos is out of bounds")
+        else:
+            line_ctr = line_ctr or LineCounter('\n')
 
         self.text = text
         self.line_ctr = line_ctr
